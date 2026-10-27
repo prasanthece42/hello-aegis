@@ -1,0 +1,22 @@
+name: Aegis CI
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: aegis-ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    uses: prasanthece42/aegis-platform/.github/workflows/python-web-ci.yml@b4f46baa41dc250a88c86f63ecb0949d5f14af02
+    with:
+      app-id: hello-aegis
+      platforms: '["amd64","arm64"]'

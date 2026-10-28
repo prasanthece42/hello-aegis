@@ -15,7 +15,7 @@ def test_supported_health_contract():
 def test_greeting_and_version_identify_the_same_deployed_service():
     greeting, version = client.get("/").json(), client.get("/version").json()
     assert greeting["app"] == version["app"] == "hello-aegis"
-    assert greeting["version"] == version["version"] == "1.0.0"
+    assert greeting["version"] == version["version"] == "1.1.0"
     assert "deployed by Aegis" in greeting["message"]
 
 

@@ -1,12 +1,19 @@
 [project]
 name = "hello-aegis"
-version = "1.0.0"
+version = "1.1.0"
 description = "Independent Aegis end-to-end DEV test service"
 requires-python = ">=3.12,<3.13"
-dependencies = ["fastapi==0.162.0", "uvicorn==0.54.0"]
+dependencies = [
+  "fastapi==0.162.0",
+  "uvicorn==0.54.0",
+  "httpx>=0.28,<1",
+  "requests>=2.32,<3",
+  "opentelemetry-sdk>=1.38,<2",
+  "opentelemetry-exporter-otlp-proto-http>=1.38,<2",
+]
 
 [dependency-groups]
-dev = ["pytest>=9,<10", "ruff>=0.17,<1", "httpx>=0.28,<1"]
+dev = ["pytest>=9,<10", "ruff>=0.17,<1"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

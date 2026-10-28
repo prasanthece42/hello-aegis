@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   validate:
-    uses: prasanthece42/aegis-platform/.github/workflows/python-web-ci.yml@b4f46baa41dc250a88c86f63ecb0949d5f14af02
+    uses: prasanthece42/aegis-platform/.github/workflows/python-web-ci.yml@5ea1b7e414b2e1f23fad849127e1bb72ded84b45
     with:
       app-id: hello-aegis
       platforms: '["amd64","arm64"]'
